@@ -1,0 +1,158 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.page-header { text-align: center; margin-bottom: 12px; }
+.page-header h1 { font-size: 26px; margin-bottom: 6px; }
+.page-header p { font-size: 14px; color: #666; }
+
+/* ✅ 关键：不要让右侧内容拉高整行（不要 stretch） */
+.layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start; /* ⭐ 改成 flex-start，防止右侧长文把左侧拉高导致热点跑位 */
+}
+
+/* 左侧地图 */
+.map-panel { flex: 2; }
+.map-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e0e7ff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.campus-map {
+  display: block;
+  width: 100%;
+  height: auto; /* 地图高度由图片自身比例决定 */
+}
+
+/* 热点（默认透明，靠 hover/active 显示） */
+/* 热点（默认透明，靠 hover/active 显示） */
+.hotspot { position: absolute; cursor: pointer; }
+
+/* 发光层：不画边框（避免出现“框”） */
+.hotspot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+
+  opacity: 0;
+
+  /* 关键：去掉 border，避免框 */
+  border: 0;
+
+  /* 同色系（默认金黄），可用 --glow-rgb 覆盖 */
+  background: rgba(var(--glow-rgb, 255 214 0), 0);
+
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out,
+              box-shadow 0.15s ease-out, background 0.15s ease-out;
+}
+
+/* hover：弱发光 */
+/* 热点本体 */
+.hotspot{
+  position:absolute;
+  cursor:pointer;
+  z-index: 5; /* 确保在图片上方 */
+}
+
+/* 发光层：不画边框，只靠发光 */
+.hotspot::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: 8px;
+  opacity:0;
+  border:0;
+  background: rgb(var(--glow-rgb, 255 214 0) / 0);
+  transition: opacity .15s ease-out, transform .15s ease-out, box-shadow .15s ease-out, background .15s ease-out;
+  pointer-events:none;
+}
+
+/* hover：弱发光 */
+.hotspot:hover::before{
+  opacity:1;
+  background: rgb(var(--glow-rgb, 255 214 0) / 0.22);
+  box-shadow:
+    0 0 10px rgb(var(--glow-rgb, 255 214 0) / 0.55),
+    0 0 22px rgb(var(--glow-rgb, 255 214 0) / 0.35);
+  transform: translate3d(0,-2px,0) scale(1.03);
+}
+
+/* active：同色系更强发光（点击锁定） */
+.hotspot.active::before{
+  opacity:1;
+  background: rgb(var(--glow-rgb, 255 214 0) / 0.40);
+  box-shadow:
+    0 0 14px rgb(var(--glow-rgb, 255 214 0) / 0.85),
+    0 0 34px rgb(var(--glow-rgb, 255 214 0) / 0.55),
+    0 0 60px rgb(var(--glow-rgb, 255 214 0) / 0.35);
+  transform: translate3d(0,-2px,0) scale(1.05);
+}
+
+
+
+/* （可选）调试红框：给 body 加 debug 类 */
+body.debug .hotspot {
+  outline: 2px dashed red;
+  background: rgba(255, 0, 0, 0.12);
+}
+
+/* 右侧信息栏 */
+.info-panel {
+  flex: 1;
+  /* 高度由 JS 锁定为地图高度；这里不参与拉伸 */
+}
+
+/* ✅ 右侧说明卡片：固定高度（JS 设置） + 内部滚动 */
+.info-box {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+
+  overflow-y: auto;  /* ⭐ 长文在这里滚动 */
+  min-height: 0;     /* ⭐ 防止 flex/内容撑破导致不滚动 */
+  position: relative;
+}
+
+/* 增强：底部渐隐提示（在滚动容器内使用 sticky） */
+.info-box::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  display: block;
+  height: 24px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  pointer-events: none;
+}
+
+.info-title { font-size: 18px; margin-bottom: 10px; }
+.info-body p { font-size: 14px; line-height: 1.7; margin-bottom: 10px; color: #444; }
+.info-body img {
+  max-width: 100%;
+  display: block;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 移动端 */
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+}
