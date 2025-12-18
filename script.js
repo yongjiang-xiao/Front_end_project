@@ -20,8 +20,8 @@ const HOTSPOT_DATA = [
     title: "学生活动中心",
     description: "举办大型活动的地方",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/71.jpg",
+      
     ],
     left: 58.28, top: 38.87, width: 3.5, height: 3
   },
@@ -70,8 +70,8 @@ const HOTSPOT_DATA = [
     title: "综合实验楼",
     description: "学生做实验的地方",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/66.jpg",
+      
     ],
     left: 49.31, top: 29.67, width: 3.5, height: 3
   },
@@ -90,8 +90,8 @@ const HOTSPOT_DATA = [
     title: "综合实验楼",
     description: "学生做实验的地方",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/64.jpg",
+      
     ],
     left: 53.26, top: 42.27, width: 3.5, height: 3
   },
@@ -100,8 +100,8 @@ const HOTSPOT_DATA = [
     title: "公共教学楼",
     description: "本科生上课的地方",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/62.jpg",
+      
     ],
     left: 45.91, top: 37.42, width: 3.5, height: 3
   },
@@ -110,8 +110,8 @@ const HOTSPOT_DATA = [
     title: "公共教学楼",
     description: "本科生上课的地方",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/62.jpg",
+     
     ],
     left: 45.91, top: 42.02, width: 3.5, height: 3
   },
@@ -120,8 +120,8 @@ const HOTSPOT_DATA = [
     title: "周恩来总理像",
     description: "周恩来总理的雕像",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/59.jpg",
+      
     ],
     left: 49.49, top: 54.14, width: 3.5, height: 3
   },
@@ -130,8 +130,8 @@ const HOTSPOT_DATA = [
     title: "图书馆",
     description: "学生们学习的地方",
     images: [
-      "assets/buildings/tennis-1.jpg",
-      "assets/buildings/tennis-2.jpg",
+      "assets/61.webp",
+      
     ],
     left: 49.67, top: 46.87, width: 3.5, height: 3
   },
@@ -717,4 +717,5 @@ document.addEventListener("keydown", (event) => {
     infoBox.scrollTop = 0;
   }
 });
+
 
