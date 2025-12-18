@@ -6,6 +6,192 @@ if (DEBUG_SHOW_HOTSPOTS) document.body.classList.add("debug");
 // ========== 1. 建筑数据（你给的 1–18 坐标全部原样保留） ==========
 const HOTSPOT_DATA = [
  {
+    id: 72,
+    title: "主体育场",
+    description: "学生进行体育运动的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 55.05, top: 28.93, width: 3.5, height: 3
+  },
+  {
+    id: 71,
+    title: "学生活动中心",
+    description: "举办大型活动的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 58.28, top: 38.87, width: 3.5, height: 3
+  },
+  {
+    id: 70,
+    title: "东园",
+    description: "一个公园，中间有个湖",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 63.66, top: 39.35, width: 3.5, height: 3
+  },
+  {
+    id: 69,
+    title: "学院组团",
+    description: "许多学院楼的位置",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 65.09, top: 46.14, width: 3.5, height: 3
+  },
+  {
+    id: 68,
+    title: "学生四食堂",
+    description: "师生用餐的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 63.12, top: 52.2, width: 3.5, height: 3
+  },
+  {
+    id: 67,
+    title: "学生宿舍",
+    description: "学生休息的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 67.96, top: 58.02, width: 3.5, height: 3
+  },
+  {
+    id: 66,
+    title: "综合实验楼",
+    description: "学生做实验的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 49.31, top: 29.67, width: 3.5, height: 3
+  },
+  {
+    id: 65,
+    title: "综合实验楼",
+    description: "学生做实验的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 52.36, top: 35, width: 3.5, height: 3
+  },
+  {
+    id: 64,
+    title: "综合实验楼",
+    description: "学生做实验的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 53.26, top: 42.27, width: 3.5, height: 3
+  },
+  {
+    id: 63,
+    title: "公共教学楼",
+    description: "本科生上课的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 45.91, top: 37.42, width: 3.5, height: 3
+  },
+  {
+    id: 62,
+    title: "公共教学楼",
+    description: "本科生上课的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 45.91, top: 42.02, width: 3.5, height: 3
+  },
+  {
+    id: 59,
+    title: "周恩来总理像",
+    description: "周恩来总理的雕像",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 49.49, top: 54.14, width: 3.5, height: 3
+  },
+  {
+    id: 61,
+    title: "图书馆",
+    description: "学生们学习的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 49.67, top: 46.87, width: 3.5, height: 3
+  },
+  {
+    id: 60,
+    title: "综合业务楼（东楼）",
+    description: "师生处理各种业务的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 54.15, top: 50.02, width: 3.5, height: 3
+  },
+  {
+    id: 58,
+    title: "综合业务楼（西楼）",
+    description: "师生处理各种业务的地方",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 45.37, top: 50.5, width: 3.5, height: 3
+  },
+  {
+    id: 57,
+    title: "陶园",
+    description: "一块绿化景观",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 57.74, top: 59.23, width: 3.5, height: 3
+  },
+  {
+    id: 56,
+    title: "铸园",
+    description: "一块绿化景观，内有一块“我是爱南开的”纪念碑",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 40.35, top: 58.75, width: 3.5, height: 3
+  },
+  {
+    id: 55,
+    title: "文科学生宿舍（研究生）",
+    description: "学生们休息的地方。",
+    images: [
+      "assets/buildings/tennis-1.jpg",
+      "assets/buildings/tennis-2.jpg",
+    ],
+    left: 41.43,
+    top: 26.52,
+    width: 3.5,
+    height: 3
+  },
+ 
+ 
+ 
+ {
   id: 1,
   title: "1：学院楼（规划中）",
   description: `<p>尚未建成，敬请期待。</p>`,
@@ -531,3 +717,4 @@ document.addEventListener("keydown", (event) => {
     infoBox.scrollTop = 0;
   }
 });
+
