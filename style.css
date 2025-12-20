@@ -1762,6 +1762,7 @@ body.drag-enabled .hotspot{
   font-weight: 500;
   color: var(--nk-blue-dark);
 }
+<<<<<<< HEAD
 
 .weather-page {
     background: linear-gradient(135deg, #782069 0%, #a54b91 100%); /* 南开紫渐变 */
@@ -1865,3 +1866,5 @@ body.drag-enabled .hotspot{
   animation: rotate 2s linear infinite;
 }
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+=======
+>>>>>>> 9fdcbdb9de8fb5d1dd01372eeecc0000f7908e07
