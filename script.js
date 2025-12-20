@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ========== 原有地图功能（保持完整） ==========
+
   // ========== 1. 建筑数据（含image字段） ==========
   const HOTSPOT_DATA = [
     {
