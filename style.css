@@ -52,7 +52,7 @@ body {
 }
 
 .section.active {
-  display: block;
+  display: block !important;
 }
 
 /* 导航栏样式 */
@@ -297,6 +297,12 @@ body {
 .about-section {
   background-color: var(--nk-white);
   padding: 80px 0;
+}
+
+/* 地图页面样式 */
+.map-section {
+  background-color: var(--nk-white);
+  padding: 60px 0;
 }
 
 .about-header {
@@ -1185,19 +1191,21 @@ body {
   display: flex;
   gap: 16px;
   align-items: stretch;   /* 两列同高 */
+  min-height: 500px; /* 添加最小高度 */
 }
 
 .map-container{
   flex: 1 1 auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  min-height: 500px; /* 添加最小高度 */
 }
 
 .info-panel{
   flex: 0 0 360px;        /* 右侧宽度 */
   max-width: 420px;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
   display: flex;
   flex-direction: column;
 }
@@ -1259,4 +1267,498 @@ body.drag-enabled .hotspot{
   border: 0;
   background: transparent;
   z-index: 10;
+}
+
+/* 生活服务板块样式 */
+.life-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.life-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.life-tagline {
+  font-size: 18px;
+  color: var(--nk-gray-dark);
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.service-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.service-category {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.service-category:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--nk-gray);
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--nk-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 24px;
+}
+
+.category-title {
+  font-size: 28px;
+  color: var(--nk-blue-dark);
+  font-weight: 600;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.service-item {
+  background: var(--nk-gray);
+  border-radius: var(--radius-md);
+  padding: 25px;
+  transition: var(--transition);
+  border: 1px solid #e9ecef;
+}
+
+.service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: white;
+}
+
+/* 服务项链接样式 */
+.service-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.service-item-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-item-link:hover .service-item {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: white;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  background: var(--nk-blue-light);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.service-name {
+  font-size: 20px;
+  color: var(--nk-blue-dark);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.service-desc {
+  color: var(--nk-gray-dark);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.service-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.detail-item {
+  font-size: 14px;
+  color: var(--nk-gray-dark);
+  background: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.detail-item i {
+  color: var(--nk-blue);
+  font-size: 12px;
+}
+
+/* 服务提示样式 */
+.service-tips {
+  margin-top: 60px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.tips-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--nk-gray);
+}
+
+.tips-header h3 {
+  font-size: 24px;
+  color: var(--nk-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tips-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.tip-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--nk-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tip-text h4 {
+  font-size: 18px;
+  color: var(--nk-blue-dark);
+  margin-bottom: 8px;
+}
+
+.tip-text p {
+  color: var(--nk-gray-dark);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* 安全保障模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--nk-white);
+  margin: 10% auto;
+  padding: 0;
+  border-radius: var(--radius-md);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+  animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--nk-blue-dark);
+  font-size: 22px;
+}
+
+.close-btn {
+  color: var(--nk-gray-dark);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--nk-blue);
+}
+
+.close {
+  color: var(--nk-gray-dark);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close:hover {
+  color: var(--nk-blue);
+}
+
+.modal-body {
+  padding: 25px 20px;
+}
+
+.safety-info h4 {
+  color: var(--nk-blue-dark);
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.campus-info {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: var(--nk-gray);
+  border-radius: var(--radius-sm);
+}
+
+.campus-info:last-child {
+  margin-bottom: 0;
+}
+
+.campus-info h5 {
+  color: var(--nk-blue);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.phone-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--nk-gray-dark);
+  margin: 5px 0;
+  padding: 8px 15px;
+}
+
+/* 响应式设计 - 生活服务板块 */
+@media (max-width: 992px) {
+  .service-category {
+    padding: 30px;
+  }
+  
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .life-section {
+    padding: 60px 0;
+  }
+  
+  .service-category {
+    padding: 25px;
+  }
+  
+  .category-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .category-icon {
+    margin-right: 0;
+  }
+  
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-tips {
+    padding: 25px;
+  }
+  
+  .tips-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .life-section {
+    padding: 40px 0;
+  }
+  
+  .life-tagline {
+    font-size: 16px;
+  }
+  
+  .service-category {
+    padding: 20px;
+  }
+  
+  .category-title {
+    font-size: 24px;
+  }
+  
+  .service-item {
+    padding: 20px;
+  }
+  
+  .service-name {
+    font-size: 18px;
+  }
+  
+  .service-tips {
+    padding: 20px;
+  }
+}
+
+.modal-body {
+  padding: 25px 20px;
+}
+
+.safety-info h4 {
+  color: var(--nk-blue-dark);
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.campus-info {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: var(--nk-gray);
+  border-radius: var(--radius-sm);
+}
+
+.campus-info:last-child {
+  margin-bottom: 0;
+}
+
+.campus-info h5 {
+  color: var(--nk-blue);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.phone-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--nk-gray-dark);
+  margin: 5px 0;
+}
+
+.safety-tips {
+  margin-top: 20px;
+}
+
+.safety-tips h4 {
+  color: var(--nk-blue-dark);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.safety-tips ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.safety-tips li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.safety-tips li::before {
+  content: "•";
+  color: var(--nk-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+}
+
+.hospital-info {
+  color: var(--nk-gray-dark);
+}
+
+.info-section {
+  margin-bottom: 25px;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-section h4 {
+  color: var(--nk-blue-dark);
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 2px solid var(--nk-blue-light);
+  padding-bottom: 8px;
+}
+
+.info-section p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.location-info p, .contact-info p {
+  margin-bottom: 8px;
+  padding: 8px 0;
+}
+
+.phone-number {
+  font-weight: 500;
+  color: var(--nk-blue-dark);
 }
