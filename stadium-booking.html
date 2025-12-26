@@ -14,7 +14,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">
-                    <img src="assets/nk-logo.png" alt="南开大学Logo" class="logo-img" />
+                    <img src="assets/南开大学logo.jpg" alt="南开大学Logo" class="logo-img" />
                     <span class="logo-text">南开大学服务网</span>
                 </a>
                 <ul class="nav-links">
@@ -22,6 +22,7 @@
                     <li><a href="index.html#about" class="nav-link" data-section="about">学校介绍</a></li>
                     <li><a href="index.html#map" class="nav-link" data-section="map">校园地图</a></li>
                     <li><a href="#" class="nav-link active" data-section="life" id="lifeServiceLink">生活服务</a></li>
+                    <li><a href="weather.html" class="nav-link">风语者</a></li>
                 </ul>
             </nav>
         </div>
@@ -147,13 +148,16 @@
                             <textarea id="remarks" rows="3" placeholder="如有特殊需求请在此说明"></textarea>
                         </div>
                         <div class="form-actions">
-                            <button type="button" class="btn btn-secondary" id="resetBtn">
-                                <i class="fas fa-redo"></i> 重置
-                            </button>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-check"></i> 确认预约
-                            </button>
-                        </div>
+                    <button type="button" class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-redo"></i> 重置
+                    </button>
+                    <button type="button" class="btn btn-info" id="testModalBtn">
+                        <i class="fas fa-eye"></i> 测试模态框
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-check"></i> 确认预约
+                    </button>
+                </div>
                     </form>
                 </div>
 
@@ -176,8 +180,8 @@
     </main>
 
     <!-- 预约成功提示 -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal">
+    <div class="booking-modal-overlay" id="successModal">
+        <div class="booking-modal">
             <div class="modal-header">
                 <h3>预约成功</h3>
                 <button class="modal-close" id="closeModal">
