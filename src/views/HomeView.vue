@@ -453,7 +453,7 @@
   
  </div>
 </template>
-<style scoped>
+<style>
 /* 把原 CSS 粘这里 */
 /* 全局样式重置 */
 *,
