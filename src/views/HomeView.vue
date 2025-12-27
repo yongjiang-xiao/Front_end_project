@@ -2,7 +2,7 @@
   <div class="page">
     <!-- 把原 body 内容粘到这里 -->
     <!-- 导航栏 -->
-   <header class="header">
+   <!-- <header class="header">
     <div class="container">
       <nav class="navbar">
         <a href="index.html" class="logo">
@@ -18,7 +18,7 @@
         </ul>
       </nav>
     </div>
-  </header>
+  </header> -->
 
   <!-- 首页板块 -->
   <section id="home" class="section home-section active">
@@ -295,58 +295,10 @@
   </section>
 
   <!-- 页脚 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="assets/南开大学logo.jpg" alt="南开大学Logo" class="footer-logo-img" />
-          <p class="footer-slogan">允公允能，日新月异</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-link-group">
-            <h4>快速链接</h4>
-            <ul>
-              <li><a href="#home" data-section="home">首页</a></li>
-              <li><a href="#about" data-section="about">学校介绍</a></li>
-              <li><a href="#map" data-section="map">校园地图</a></li>
-              <li><a href="life.html">生活服务</a></li>
-            </ul>
-          </div>
-          <div class="footer-link-group">
-            <h4>官方平台</h4>
-            <ul>
-              <li><a href="https://www.nankai.edu.cn" target="_blank">南开大学官网</a></li>
-              <li><a href="https://jwc.nankai.edu.cn" target="_blank">教务处</a></li>
-              <li><a href="https://graduate.nankai.edu.cn" target="_blank">研究生院</a></li>
-              <li><a href="https://xsc.nankai.edu.cn" target="_blank">学生工作处</a></li>
-            </ul>
-          </div>
-          <div class="footer-link-group">
-            <h4>招生就业</h4>
-            <ul>
-              <li><a href="https://zsb.nankai.edu.cn" target="_blank">本科招生</a></li>
-              <li><a href="https://graduate.nankai.edu.cn" target="_blank">研究生招生</a></li>
-              <li><a href="https://job.nankai.edu.cn" target="_blank">就业指导中心</a></li>
-            </ul>
-          </div>
-          <div class="footer-link-group">
-            <h4>联系我们</h4>
-            <ul>
-              <li><i class="fas fa-map-marker-alt"></i> 天津市南开区卫津路94号</li>
-              <li><i class="fas fa-phone"></i> 022-23508219</li>
-              <li><i class="fas fa-envelope"></i> office@nankai.edu.cn</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        
-      </div>
-    </div>
-  </footer>
+  
 
   <!-- 安全保障模态框 -->
-  <div id="safety-modal" class="modal">
+  <!-- <div id="safety-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
         <h3>校园安全保障</h3>
@@ -368,10 +320,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- 校医院模态框 -->
-  <div id="hospital-modal" class="modal">
+  <!-- <div id="hospital-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
         <h3>南开大学校医院</h3>
@@ -403,7 +355,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- 校园地图板块 -->
   <section id="map" class="section map-section">
@@ -597,7 +549,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("assets/nk-background.png");
+  background-image: url('@/assets/images/八里台校区.webp');
   background-size: cover;
   background-position: center;
   opacity: 0.1;
@@ -889,14 +841,14 @@ body {
   font-size: 12px;
 }
 
-/* 时间线样式（完全匹配你提供的截图） */
+/* 时间线样式（完全匹配你提供的截图）
 .timeline {
   position: relative;
   padding-left: 140px;
   /* 预留日期+竖线区域 */
-  margin: 0;
+  /* margin: 0;
   width: 100%;
-}
+} */ */
 
 /* 时间线竖线（左对齐，与日期块右侧贴合） */
 .timeline::before {
@@ -1279,61 +1231,13 @@ body {
    Hotspot：只有光，不要边框，不要变蓝
 ================================ */
 
-/* 热点本体：永远透明、无框 */
-.hotspot{
-  position: absolute;
-  cursor: pointer;
-  z-index: 5;
-  background: transparent !important;
-  border: 0 !important;
-  outline: none !important;
-  box-shadow: none !important;
-  -webkit-tap-highlight-color: transparent;
-}
 
-/* 发光层：不画边框，只靠背景+光晕 */
-.hotspot::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius: 8px;
-  opacity:0;
-  border:0 !important;            /* ✅ 禁止边框 */
-  outline:0 !important;
-  background: rgb(255 214 0 / 0); /* 默认透明 */
-  box-shadow: none;
-  transition: opacity .15s ease-out, transform .15s ease-out, box-shadow .15s ease-out, background .15s ease-out;
-  pointer-events:none;
-}
 
-/* hover：弱发光（金黄） */
-.hotspot:hover::before{
-  opacity:1;
-  background: rgb(255 214 0 / 0.22);
-  box-shadow:
-    0 0 10px rgb(255 214 0 / 0.55),
-    0 0 22px rgb(255 214 0 / 0.35);
-  transform: translate3d(0,-2px,0) scale(1.03);
-}
+/
 
-/* active：更强发光（仍是金黄，不变蓝） */
-.hotspot.active::before{
-  opacity:1;
-  background: rgb(255 214 0 / 0.40);
-  box-shadow:
-    0 0 14px rgb(255 214 0 / 0.85),
-    0 0 34px rgb(255 214 0 / 0.55),
-    0 0 60px rgb(255 214 0 / 0.35);
-  transform: translate3d(0,-2px,0) scale(1.05);
-}
 
-/* 彻底禁止点击/聚焦产生的蓝框 */
-.hotspot:focus,
-.hotspot:focus-visible,
-.hotspot:active{
-  outline: none !important;
-  box-shadow: none !important;
-}
+
+
 
 
 
@@ -1644,685 +1548,6 @@ body {
 }
 /* ===== 地图页：左右同高，右侧可滚动 ===== */
 
-.layout{
-  display: flex;
-  gap: 16px;
-  align-items: stretch;   /* 两列同高 */
-  min-height: 500px; /* 添加最小高度 */
-}
-
-.map-container{
-  flex: 1 1 auto;
-  position: relative;
-  overflow: visible;
-  min-height: 500px; /* 添加最小高度 */
-}
-
-.info-panel{
-  flex: 0 0 360px;        /* 右侧宽度 */
-  max-width: 420px;
-  height: auto;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-}
-
-#info-title{
-  flex: 0 0 auto;
-}
-
-#info-body{
-  flex: 1 1 auto;         /* 占满剩余高度 */
-  overflow-y: auto;       /* 超出滚动 */
-  padding-right: 6px;
-}
-
-/* 右侧内容里的图片不会撑爆 */
-#info-body img{
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-/* 右侧信息栏：内部滚动 */
-.info-box{
-  overflow-y: auto;
-  min-height: 0;     /* 必须：否则 flex 下可能不滚动 */
-}
-
-/* 右侧内容里的图片不要撑爆 */
-.info-body img{
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-/* ===============================
-   Hotspot：默认无框、无底色
-================================ */
-.hotspot{
-  position: absolute;
-  cursor: pointer;
-  outline: 0;
-  border: 0;
-  background: transparent;
-  z-index: 5;
-}
-
-/* ✅ 红框调试：仅在 JS 给 body 加了 debug 类时 */
-body.debug .hotspot{
-  outline: 2px dashed red !important;
-  background: rgba(255, 0, 0, 0.15) !important;
-}
-
-/* ✅ 只有拖拽开启时才显示 move 光标 */
-body.drag-enabled .hotspot{
-  cursor: move;
-}
-
-/* ✅ 拖拽中：不要蓝框，只提高层级 */
-.hotspot.dragging{
-  outline: 0;
-  border: 0;
-  background: transparent;
-  z-index: 10;
-}
-
-/* 生活服务板块样式 */
-.life-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.life-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.life-tagline {
-  font-size: 18px;
-  color: var(--nk-gray-dark);
-  margin-top: 16px;
-  font-weight: 300;
-}
-
-.service-categories {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.service-category {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.service-category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.category-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--nk-gray);
-}
-
-.category-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--nk-blue);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  font-size: 24px;
-}
-
-.category-title {
-  font-size: 28px;
-  color: var(--nk-blue-dark);
-  font-weight: 600;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-.service-item {
-  background: var(--nk-gray);
-  border-radius: var(--radius-md);
-  padding: 25px;
-  transition: var(--transition);
-  border: 1px solid #e9ecef;
-}
-
-.service-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  background: white;
-}
-
-/* 服务项链接样式 */
-.service-item-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-.service-item-link:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-.service-item-link:hover .service-item {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  background: white;
-}
-
-.service-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius-sm);
-  background: var(--nk-blue-light);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.service-name {
-  font-size: 20px;
-  color: var(--nk-blue-dark);
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.service-desc {
-  color: var(--nk-gray-dark);
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.service-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.detail-item {
-  font-size: 14px;
-  color: var(--nk-gray-dark);
-  background: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.detail-item i {
-  color: var(--nk-blue);
-  font-size: 12px;
-}
-
-/* 服务提示样式 */
-.service-tips {
-  margin-top: 60px;
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-md);
-}
-
-.tips-header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--nk-gray);
-}
-
-.tips-header h3 {
-  font-size: 24px;
-  color: var(--nk-blue-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.tips-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.tip-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.tip-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--nk-blue);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.tip-text h4 {
-  font-size: 18px;
-  color: var(--nk-blue-dark);
-  margin-bottom: 8px;
-}
-
-.tip-text p {
-  color: var(--nk-gray-dark);
-  line-height: 1.5;
-  font-size: 14px;
-}
-
-/* 安全保障模态框样式 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: var(--nk-white);
-  margin: 10% auto;
-  padding: 0;
-  border-radius: var(--radius-md);
-  width: 90%;
-  max-width: 500px;
-  box-shadow: var(--shadow-lg);
-  animation: modalopen 0.4s;
-}
-
-@keyframes modalopen {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.modal-header h3 {
-  margin: 0;
-  color: var(--nk-blue-dark);
-  font-size: 22px;
-}
-
-.close-btn {
-  color: var(--nk-gray-dark);
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.close-btn:hover {
-  color: var(--nk-blue);
-}
-
-.close {
-  color: var(--nk-gray-dark);
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.close:hover {
-  color: var(--nk-blue);
-}
-
-.modal-body {
-  padding: 25px 20px;
-}
-
-.safety-info h4 {
-  color: var(--nk-blue-dark);
-  margin-bottom: 20px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.campus-info {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: var(--nk-gray);
-  border-radius: var(--radius-sm);
-}
-
-.campus-info:last-child {
-  margin-bottom: 0;
-}
-
-.campus-info h5 {
-  color: var(--nk-blue);
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.phone-number {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--nk-gray-dark);
-  margin: 5px 0;
-  padding: 8px 15px;
-}
-
-/* 响应式设计 - 生活服务板块 */
-@media (max-width: 992px) {
-  .service-category {
-    padding: 30px;
-  }
-  
-  .service-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .life-section {
-    padding: 60px 0;
-  }
-  
-  .service-category {
-    padding: 25px;
-  }
-  
-  .category-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-  
-  .category-icon {
-    margin-right: 0;
-  }
-  
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .service-tips {
-    padding: 25px;
-  }
-  
-  .tips-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .life-section {
-    padding: 40px 0;
-  }
-  
-  .life-tagline {
-    font-size: 16px;
-  }
-  
-  .service-category {
-    padding: 20px;
-  }
-  
-  .category-title {
-    font-size: 24px;
-  }
-  
-  .service-item {
-    padding: 20px;
-  }
-  
-  .service-name {
-    font-size: 18px;
-  }
-  
-  .service-tips {
-    padding: 20px;
-  }
-}
-
-.modal-body {
-  padding: 25px 20px;
-}
-
-.safety-info h4 {
-  color: var(--nk-blue-dark);
-  margin-bottom: 20px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.campus-info {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: var(--nk-gray);
-  border-radius: var(--radius-sm);
-}
-
-.campus-info:last-child {
-  margin-bottom: 0;
-}
-
-.campus-info h5 {
-  color: var(--nk-blue);
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.phone-number {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--nk-gray-dark);
-  margin: 5px 0;
-}
-
-.safety-tips {
-  margin-top: 20px;
-}
-
-.safety-tips h4 {
-  color: var(--nk-blue-dark);
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.safety-tips ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.safety-tips li {
-  margin-bottom: 10px;
-  padding-left: 25px;
-  position: relative;
-}
-
-.safety-tips li::before {
-  content: "•";
-  color: var(--nk-blue);
-  font-weight: bold;
-  position: absolute;
-  left: 10px;
-}
-
-.hospital-info {
-  color: var(--nk-gray-dark);
-}
-
-.info-section {
-  margin-bottom: 25px;
-}
-
-.info-section:last-child {
-  margin-bottom: 0;
-}
-
-.info-section h4 {
-  color: var(--nk-blue-dark);
-  margin-bottom: 15px;
-  font-size: 20px;
-  border-bottom: 2px solid var(--nk-blue-light);
-  padding-bottom: 8px;
-}
-
-.info-section p {
-  line-height: 1.6;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.location-info p, .contact-info p {
-  margin-bottom: 8px;
-  padding: 8px 0;
-}
-
-.phone-number {
-  font-weight: 500;
-  color: var(--nk-blue-dark);
-}
-
-
-.weather-page {
-    background: linear-gradient(135deg, #782069 0%, #a54b91 100%); /* 南开紫渐变 */
-    color: white;
-    min-height: 100vh;
-    padding: 20px;
-    font-family: "Microsoft YaHei", sans-serif;
-}
-
-.weather-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.wind-main-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px); /* 毛玻璃效果 */
-    border-radius: 20px;
-    padding: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-.wind-icon {
-    font-size: 80px;
-    animation: wind-move 3s infinite ease-in-out;
-}
-
-@keyframes wind-move {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(15px); }
-}
-
-#wind-level {
-    font-size: 100px;
-    font-weight: bold;
-}
-
-.survival-guide {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.guide-cards {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.guide-item {
-    flex: 1;
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    border-left: 4px solid #782069;
-}
-
-.guide-item i {
-    font-size: 24px;
-    color: #782069;
-    margin-bottom: 10px;
-}
-/* 让背景动起来：模拟流动的云层 */
-.weather-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.weather-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 200%; height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-  animation: moveBackground 20s linear infinite;
-}
-
-@keyframes moveBackground {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* 简单的雷达扫描动画 */
-.radar-container {
-  position: absolute;
-  top: 20px; right: 20px;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.2);
-}
-.radar-beam {
-  width: 50%; height: 2px;
-  background: white;
-  position: absolute; top: 50%; left: 50%;
-  transform-origin: left center;
-  animation: rotate 2s linear infinite;
-}
-@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 
 
