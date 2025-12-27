@@ -119,44 +119,46 @@ export default {
 }
 
 .hero {
-  background: linear-gradient(135deg, #4a6cf7 0%, #667eea 100%);
-  color: white;
-  padding: 100px 0 80px;
+  background: linear-gradient(135deg, var(--nk-blue-dark), var(--nk-blue));
+  color: var(--nk-white);
+  padding: 100px 0;
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('../assets/images/八里台校区.webp') no-repeat center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 83, 151, 0.1), rgba(120, 32, 105, 0.1));
   background-size: cover;
-  opacity: 0.2;
+  background-position: center;
+  opacity: 1;
   z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  line-height: 1.6;
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 48px;
+  opacity: 0.9;
+  line-height: 1.8;
 }
 
 .hero-buttons {
@@ -167,73 +169,73 @@ export default {
 
 .features {
   padding: 80px 0;
-  background-color: #f8f9fa;
+  background-color: var(--nk-white);
 }
 
 .section-title {
+  font-size: 36px;
+  color: var(--nk-blue-dark);
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #333;
+  margin-bottom: 16px;
   position: relative;
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -15px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: #4a6cf7;
+  background-color: var(--nk-blue);
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
 .feature-card {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
+  background-color: var(--nk-white);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   cursor: pointer;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .feature-icon {
   width: 80px;
   height: 80px;
-  background-color: rgba(74, 108, 247, 0.1);
+  background-color: rgba(26, 83, 151, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 24px;
 }
 
 .feature-icon i {
   font-size: 2rem;
-  color: #4a6cf7;
+  color: var(--nk-blue);
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #333;
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--nk-blue-dark);
 }
 
 .feature-card p {
-  color: #666;
+  color: var(--nk-gray-dark);
   line-height: 1.6;
 }
 
@@ -244,20 +246,20 @@ export default {
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
 .news-card {
-  background: white;
-  border-radius: 10px;
+  background-color: var(--nk-white);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
 
 .news-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .news-image {
@@ -277,17 +279,17 @@ export default {
 }
 
 .news-content {
-  padding: 25px;
+  padding: 24px;
 }
 
 .news-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: #333;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--nk-blue-dark);
 }
 
 .news-content p {
-  color: #666;
+  color: var(--nk-gray-dark);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -304,23 +306,23 @@ export default {
 }
 
 .news-link {
-  color: #4a6cf7;
+  color: var(--nk-blue);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: var(--transition);
 }
 
 .news-link:hover {
-  color: #3a5bd9;
+  color: var(--nk-blue-dark);
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 36px;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 18px;
   }
   
   .hero-buttons {
@@ -328,9 +330,36 @@ export default {
     align-items: center;
   }
   
+  .btn {
+    padding: 12px 28px;
+    margin-bottom: 16px;
+  }
+  
+  .btn-outline {
+    margin-left: 0;
+  }
+  
   .features-grid,
   .news-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .features {
+    padding: 40px 0;
+  }
+  
+  .feature-card {
+    padding: 24px;
   }
 }
 </style>

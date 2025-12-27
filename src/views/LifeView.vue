@@ -1,9 +1,9 @@
 <template>
-  <div class="life-view">
+  <div class="life-section">
     <div class="container">
       <div class="life-header">
-        <h1 class="page-title">生活服务</h1>
-        <p class="page-subtitle">便捷生活，贴心服务 | 打造南开学子一站式生活服务平台</p>
+        <h2 class="section-title">生活服务</h2>
+        <p class="life-tagline">便捷生活，贴心服务 | 打造南开学子一站式生活服务平台</p>
       </div>
 
       <!-- 服务分类 -->
@@ -14,81 +14,276 @@
             <div class="category-icon">
               <i class="fas fa-bed"></i>
             </div>
-            <h2 class="category-title">宿舍服务</h2>
+            <h3 class="category-title">宿舍服务</h3>
           </div>
           <div class="service-grid">
-            <div class="service-item" @click="navigateTo('/life/dorm-repair')">
-              <div class="service-icon">
-                <i class="fas fa-tools"></i>
+            <router-link to="/life/dorm-repair" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h4 class="service-name">宿舍报修</h4>
+                <p class="service-desc">水电维修、家具更换、网络故障报修，快速响应宿舍问题</p>
               </div>
-              <h3>宿舍报修</h3>
-              <p>在线提交宿舍设施报修申请</p>
+            </router-link>
+            <a href="#" class="service-item-link" @click.prevent="showSafetyModal">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4 class="service-name">安全保障</h4>
+                <p class="service-desc">校园安全紧急联系、门禁系统使用指南、安全防范知识</p>
+              </div>
+            </a>
+            <div>
             </div>
           </div>
         </div>
 
-        <!-- 校园服务 -->
+        <!-- 校园卡服务 -->
         <div class="service-category">
           <div class="category-header">
             <div class="category-icon">
-              <i class="fas fa-school"></i>
+              <i class="fas fa-credit-card"></i>
             </div>
-            <h2 class="category-title">校园服务</h2>
+            <h3 class="category-title">校园卡服务</h3>
           </div>
           <div class="service-grid">
-            <div class="service-item" @click="navigateTo('/life/stadium-booking')">
-              <div class="service-icon">
-                <i class="fas fa-running"></i>
+            <router-link to="/life/card-loss" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h4 class="service-name">校园卡挂失</h4>
+                <p class="service-desc">校园卡丢失快速挂失流程、补办地点、临时卡申请指南</p>
               </div>
-              <h3>体育馆预约</h3>
-              <p>预约校内体育场馆和设施</p>
-            </div>
-            <div class="service-item" @click="navigateTo('/life/shuttle-bus')">
-              <div class="service-icon">
-                <i class="fas fa-bus"></i>
+            </router-link>
+            <router-link to="/life/card-recharge" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-wallet"></i>
+                </div>
+                <h4 class="service-name">校园卡充值</h4>
+                <p class="service-desc">支付宝/微信充值教程、自助充值机位置、校园卡消费明细查询</p>
               </div>
-              <h3>班车查询</h3>
-              <p>查询校车时刻表和路线</p>
-            </div>
-            <div class="service-item" @click="navigateTo('/life/club-activities')">
-              <div class="service-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <h3>社团活动</h3>
-              <p>了解校内社团和活动信息</p>
+            </router-link>
+            <div>
             </div>
           </div>
         </div>
 
-        <!-- 学生服务 -->
+        <!-- 交通服务 -->
         <div class="service-category">
           <div class="category-header">
             <div class="category-icon">
-              <i class="fas fa-user-graduate"></i>
+              <i class="fas fa-bus"></i>
             </div>
-            <h2 class="category-title">学生服务</h2>
+            <h3 class="category-title">交通服务</h3>
           </div>
           <div class="service-grid">
-            <div class="service-item" @click="navigateTo('/life/psychological-counseling')">
-              <div class="service-icon">
-                <i class="fas fa-brain"></i>
+            <router-link to="/life/shuttle-bus" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-shuttle-van"></i>
+                </div>
+                <h4 class="service-name">校车查询</h4>
+                <p class="service-desc">八里台-津南校区班车时刻表、节假日调整、实时位置查询</p>
               </div>
-              <h3>心理咨询</h3>
-              <p>专业心理健康支持与咨询</p>
+            </router-link>
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fas fa-bicycle"></i>
+              </div>
+              <h4 class="service-name">共享单车</h4>
+              <p class="service-desc">校园内共享单车停放区域规划、使用优惠、违规停放处理办法</p>
             </div>
-            <div class="service-item" @click="navigateTo('/life/card-loss')">
-              <div class="service-icon">
-                <i class="fas fa-id-card"></i>
-              </div>
-              <h3>校园卡挂失</h3>
-              <p>校园卡丢失在线挂失</p>
+            <div>
             </div>
-            <div class="service-item" @click="navigateTo('/life/card-recharge')">
-              <div class="service-icon">
-                <i class="fas fa-credit-card"></i>
+          </div>
+        </div>
+
+        <!-- 医疗健康 -->
+        <div class="service-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-hospital"></i>
+            </div>
+            <h3 class="category-title">医疗健康</h3>
+          </div>
+          <div class="service-grid">
+            <a href="#" class="service-item-link" @click.prevent="showHospitalModal">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-clinic-medical"></i>
+                </div>
+                <h4 class="service-name">校医院</h4>
+                <p class="service-desc">各科室门诊时间、专家坐诊表、学生医保报销流程及定点医院</p>
               </div>
-              <h3>校园卡充值</h3>
-              <p>在线为校园卡充值</p>
+            </a>
+            <router-link to="/life/psychological-counseling" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-heartbeat"></i>
+                </div>
+                <h4 class="service-name">心理咨询</h4>
+                <p class="service-desc">个人心理咨询预约、团体辅导活动、心理健康测评及危机干预</p>
+              </div>
+            </router-link>
+            <div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 文体生活 -->
+        <div class="service-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-running"></i>
+            </div>
+            <h3 class="category-title">文体生活</h3>
+          </div>
+          <div class="service-grid">
+            <router-link to="/life/stadium-booking" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-basketball-ball"></i>
+                </div>
+                <h4 class="service-name">体育馆预约</h4>
+                <p class="service-desc">篮球场/羽毛球场/网球场在线预约、体育器材借用、赛事活动报名</p>
+              </div>
+            </router-link>
+            <a href="https://lib.nankai.edu.cn/" target="_blank" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>
+                <h4 class="service-name">图书馆</h4>
+                <p class="service-desc">馆藏图书检索、自习室座位预约、电子资源访问及文献传递服务</p>
+              </div>
+            </a>
+            <router-link to="/life/club-activities" class="service-item-link">
+              <div class="service-item">
+                <div class="service-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h4 class="service-name">学生社团</h4>
+                <p class="service-desc">社团分类查询、活动日历、新学期招新信息及社团成立申请流程</p>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </div>
+
+      <!-- 服务提示 -->
+      <div class="service-tips">
+        <div class="tips-header">
+          <h3><i class="fas fa-info-circle"></i> 服务提示</h3>
+        </div>
+        <div class="tips-content">
+          <div class="tip-item">
+            <div class="tip-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="tip-text">
+              <h4>服务热线</h4>
+              <p>校园服务总机：022-23508219（工作时间：周一至周五 08:00-17:30）</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="tip-text">
+              <h4>在线服务</h4>
+              <p>南开大学一站式服务平台：service.nankai.edu.cn（24小时在线服务）</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="tip-text">
+              <h4>服务中心</h4>
+              <p>学生服务中心：各校区教学楼一楼（工作时间：周一至周五 08:30-17:00）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 安全保障模态框 -->
+    <div id="safety-modal" class="modal" v-show="showSafety" @click="closeSafetyModal">
+      <div class="modal-content" @click.stop>
+        <div class="modal-header">
+          <h3>安全保障服务</h3>
+          <span class="close" @click="closeSafetyModal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="safety-info">
+            <div class="safety-item">
+              <h4><i class="fas fa-phone-alt"></i> 紧急联系电话</h4>
+              <p>校园保卫处：022-23508110（24小时）</p>
+              <p>医疗急救：120</p>
+              <p>火警：119</p>
+              <p>报警：110</p>
+            </div>
+            <div class="safety-item">
+              <h4><i class="fas fa-id-card"></i> 门禁系统使用指南</h4>
+              <p>1. 学生卡/工作证是校园主要门禁凭证，请妥善保管</p>
+              <p>2. 宿舍门禁时间：工作日23:00，节假日23:30</p>
+              <p>3. 晚归学生需在宿舍楼值班室登记</p>
+              <p>4. 丢失门禁卡请立即到校园卡中心挂失补办</p>
+            </div>
+            <div class="safety-item">
+              <h4><i class="fas fa-shield-alt"></i> 安全防范知识</h4>
+              <p>1. 宿舍内不使用大功率电器，离开时关闭电源</p>
+              <p>2. 贵重物品妥善保管，不要随意放置在公共场所</p>
+              <p>3. 夜间出行尽量结伴，避免走偏僻路段</p>
+              <p>4. 发现可疑人员或情况及时报告保卫处</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 校医院模态框 -->
+    <div id="hospital-modal" class="modal" v-show="showHospital" @click="closeHospitalModal">
+      <div class="modal-content" @click.stop>
+        <div class="modal-header">
+          <h3>校医院服务信息</h3>
+          <span class="close" @click="closeHospitalModal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="hospital-info">
+            <div class="hospital-item">
+              <h4><i class="fas fa-clock"></i> 门诊时间</h4>
+              <p>周一至周五：08:00-12:00，14:00-17:30</p>
+              <p>周六、周日：09:00-12:00，14:00-16:30</p>
+              <p>节假日：09:00-12:00，14:00-16:00</p>
+              <p>急诊：24小时值班</p>
+            </div>
+            <div class="hospital-item">
+              <h4><i class="fas fa-user-md"></i> 专家坐诊表</h4>
+              <p>内科专家：周二、周四下午</p>
+              <p>外科专家：周一、周三下午</p>
+              <p>中医科专家：周五全天</p>
+              <p>眼科专家：每月第二周、第四周周三上午</p>
+            </div>
+            <div class="hospital-item">
+              <h4><i class="fas fa-file-medical"></i> 学生医保报销</h4>
+              <p>1. 校医院就诊直接享受医保待遇，无需额外报销</p>
+              <p>2. 转诊至校外医院需先办理转诊手续</p>
+              <p>3. 门诊费用报销比例：校内90%，校外70%</p>
+              <p>4. 住院费用报销比例：85%</p>
+              <p>5. 报销地点：校医院一楼医保办公室（每周一、三下午）</p>
+            </div>
+            <div class="hospital-item">
+              <h4><i class="fas fa-hospital"></i> 定点医院</h4>
+              <p>1. 天津医科大学总医院</p>
+              <p>2. 天津市第一中心医院</p>
+              <p>3. 天津市肿瘤医院</p>
+              <p>4. 天津市眼科医院</p>
+              <p>5. 天津市口腔医院</p>
             </div>
           </div>
         </div>
@@ -98,143 +293,10 @@
 </template>
 
 <script>
-export default {
-  name: 'LifeView',
-  methods: {
-    navigateTo(path) {
-      this.$router.push(path)
-    }
-  }
-}
+import lifeViewScript from '@/assets/js/LifeView.js';
+
+export default lifeViewScript;
 </script>
 
-<style scoped>
-.life-view {
-  padding: 40px 0;
-}
-
-.life-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.page-title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.page-subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.service-categories {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.service-category {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  padding: 30px;
-}
-
-.category-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.category-icon {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(74, 108, 247, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-}
-
-.category-icon i {
-  font-size: 1.8rem;
-  color: #4a6cf7;
-}
-
-.category-title {
-  font-size: 1.8rem;
-  color: #333;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.service-item {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-  width: 70px;
-  height: 70px;
-  background-color: rgba(74, 108, 247, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.service-icon i {
-  font-size: 1.8rem;
-  color: #4a6cf7;
-}
-
-.service-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.service-item p {
-  color: #666;
-  line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 2rem;
-  }
-  
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .category-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .category-icon {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-}
-</style>
+<style src="@/assets/css/global.css"></style>
+<style src="@/assets/css/life.css"></style>

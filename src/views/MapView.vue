@@ -280,25 +280,28 @@ export default {
 }
 
 .hero-section {
-  background: linear-gradient(135deg, #4a6cf7 0%, #667eea 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--nk-blue-dark), var(--nk-blue));
+  color: var(--nk-white);
   padding: 80px 0;
   text-align: center;
 }
 
 .page-title {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 48px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .page-subtitle {
-  font-size: 1.3rem;
+  font-size: 20px;
   font-weight: 300;
+  opacity: 0.9;
 }
 
 .search-section {
   padding: 40px 0;
-  background-color: #f8f9fa;
+  background-color: var(--nk-gray);
   margin-bottom: 30px;
 }
 
@@ -306,9 +309,9 @@ export default {
   display: flex;
   max-width: 600px;
   margin: 0 auto 20px;
-  border-radius: 50px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .search-input {
@@ -320,16 +323,16 @@ export default {
 }
 
 .search-btn {
-  background-color: #4a6cf7;
-  color: white;
+  background-color: var(--nk-blue);
+  color: var(--nk-white);
   border: none;
   padding: 0 25px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: var(--transition);
 }
 
 .search-btn:hover {
-  background-color: #3a5bd9;
+  background-color: var(--nk-blue-dark);
 }
 
 .quick-search {
@@ -338,37 +341,39 @@ export default {
 
 .quick-search-label {
   margin-right: 10px;
-  color: #666;
+  color: var(--nk-gray-dark);
 }
 
 .tag-btn {
-  background-color: white;
+  background-color: var(--nk-white);
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 8px 15px;
   margin: 0 5px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: var(--transition);
 }
 
 .tag-btn:hover {
-  background-color: #4a6cf7;
-  color: white;
-  border-color: #4a6cf7;
+  background-color: var(--nk-blue);
+  color: var(--nk-white);
+  border-color: var(--nk-blue);
 }
 
 .map-section {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 30px;
+  gap: 24px;
   margin-bottom: 50px;
 }
 
 .map-container {
-  background: white;
-  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: #e0e7ff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
 }
 
 .map-wrapper {
@@ -389,34 +394,34 @@ export default {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #4a6cf7;
+  background-color: var(--nk-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--nk-white);
   cursor: pointer;
   transform: translate(-50%, -50%);
-  transition: all 0.3s;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .map-marker:hover {
   transform: translate(-50%, -50%) scale(1.1);
-  background-color: #3a5bd9;
+  background-color: var(--nk-blue-dark);
 }
 
 .location-panel {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--nk-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
   height: fit-content;
 }
 
 .panel-header {
-  background-color: #4a6cf7;
-  color: white;
+  background-color: var(--nk-blue);
+  color: var(--nk-white);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -424,14 +429,14 @@ export default {
 }
 
 .panel-header h3 {
-  font-size: 1.3rem;
+  font-size: 20px;
   margin: 0;
 }
 
 .close-btn {
   background: none;
   border: none;
-  color: white;
+  color: var(--nk-white);
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -453,13 +458,13 @@ export default {
 .info-item i {
   width: 20px;
   margin-right: 10px;
-  color: #4a6cf7;
+  color: var(--nk-blue);
 }
 
 .location-description {
   margin-bottom: 20px;
   line-height: 1.6;
-  color: #666;
+  color: var(--nk-gray-dark);
 }
 
 .location-actions {
@@ -469,34 +474,34 @@ export default {
 
 .btn {
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 14px;
-  transition: all 0.3s;
+  transition: var(--transition);
 }
 
 .btn-primary {
-  background-color: #4a6cf7;
-  color: white;
+  background-color: var(--nk-blue);
+  color: var(--nk-white);
 }
 
 .btn-primary:hover {
-  background-color: #3a5bd9;
+  background-color: var(--nk-blue-dark);
 }
 
 .btn-outline {
   background-color: transparent;
-  border: 1px solid #4a6cf7;
-  color: #4a6cf7;
+  border: 1px solid var(--nk-blue);
+  color: var(--nk-blue);
 }
 
 .btn-outline:hover {
-  background-color: #4a6cf7;
-  color: white;
+  background-color: var(--nk-blue);
+  color: var(--nk-white);
 }
 
 .categories-section {
@@ -504,69 +509,69 @@ export default {
 }
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 36px;
   text-align: center;
-  margin-bottom: 40px;
-  color: #333;
+  margin-bottom: 16px;
+  color: var(--nk-blue-dark);
   position: relative;
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -15px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: #4a6cf7;
+  background-color: var(--nk-blue);
 }
 
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
+  gap: 32px;
 }
 
 .category-card {
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
+  background-color: var(--nk-white);
+  border-radius: var(--radius-md);
+  padding: 30px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: var(--transition);
 }
 
 .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .category-icon {
   width: 60px;
   height: 60px;
-  background-color: rgba(74, 108, 247, 0.1);
+  background-color: rgba(26, 83, 151, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 15px;
+  margin: 0 auto 20px;
 }
 
 .category-icon i {
   font-size: 1.5rem;
-  color: #4a6cf7;
+  color: var(--nk-blue);
 }
 
 .category-card h3 {
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--nk-blue-dark);
 }
 
 .category-count {
-  color: #666;
+  color: var(--nk-gray-dark);
   font-size: 0.9rem;
 }
 
@@ -582,11 +587,11 @@ export default {
 
 @media (max-width: 768px) {
   .page-title {
-    font-size: 2.2rem;
+    font-size: 36px;
   }
   
   .page-subtitle {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
   
   .category-grid {

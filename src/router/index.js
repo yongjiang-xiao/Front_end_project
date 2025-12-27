@@ -22,42 +22,47 @@ const routes = [
     name: 'life',
     component: () => import('../views/LifeView.vue'),
     children: [
-      {
-        path: 'psychological-counseling',
-        name: 'psychological-counseling',
-        component: () => import('../views/life/PsychologicalCounseling.vue')
-      },
-      {
-        path: 'stadium-booking',
-        name: 'stadium-booking',
-        component: () => import('../views/life/StadiumBooking.vue')
-      },
+      // {
+      //   path: 'psychological-counseling',
+      //   name: 'psychological-counseling',
+      //   component: () => import('../views/life/PsychologicalCounseling.vue')
+      // },
+      // {
+      //   path: 'stadium-booking',
+      //   name: 'stadium-booking',
+      //   component: () => import('../views/life/StadiumBooking.vue')
+      // },
       {
         path: 'shuttle-bus',
         name: 'shuttle-bus',
         component: () => import('../views/life/ShuttleBus.vue')
       },
-      {
-        path: 'card-loss',
-        name: 'card-loss',
-        component: () => import('../views/life/CardLoss.vue')
-      },
-      {
-        path: 'card-recharge',
-        name: 'card-recharge',
-        component: () => import('../views/life/CardRecharge.vue')
-      },
-      {
-        path: 'dorm-repair',
-        name: 'dorm-repair',
-        component: () => import('../views/life/DormRepair.vue')
-      },
-      {
-        path: 'club-activities',
-        name: 'club-activities',
-        component: () => import('../views/life/ClubActivities.vue')
-      }
+      // {
+      //   path: 'card-loss',
+      //   name: 'card-loss',
+      //   component: () => import('../views/life/CardLoss.vue')
+      // },
+      // {
+      //   path: 'card-recharge',
+      //   name: 'card-recharge',
+      //   component: () => import('../views/life/CardRecharge.vue')
+      // },
+      // {
+      //   path: 'dorm-repair',
+      //   name: 'dorm-repair',
+      //   component: () => import('../views/life/DormRepair.vue')
+      // },
+      // {
+      //   path: 'club-activities',
+      //   name: 'club-activities',
+      //   component: () => import('../views/life/ClubActivities.vue')
+      // }
     ]
+  },
+  {
+    path: '/life/shuttle-bus',
+    name: 'shuttle-bus',
+    component: () => import('../views/life/ShuttleBus.vue')
   },
   {
     path: '/weather',

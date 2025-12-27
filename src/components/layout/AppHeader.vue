@@ -17,7 +17,7 @@
             <router-link to="/map" class="nav-link" :class="{ active: $route.name === 'map' }">校园地图</router-link>
           </li>
           <li>
-            <router-link to="/life" class="nav-link" :class="{ active: $route.name === 'life' }">生活服务</router-link>
+            <router-link to="/life" class="nav-link" :class="{ active: $route.path.startsWith('/life') }">生活服务</router-link>
           </li>
           <li>
             <router-link to="/weather" class="nav-link" :class="{ active: $route.name === 'weather' }">风语者</router-link>
@@ -36,87 +36,70 @@ export default {
 
 <style scoped>
 .header {
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--nk-white);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  height: 80px;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  gap: 12px;
   text-decoration: none;
-  color: #333;
 }
 
 .logo-img {
-  height: 40px;
-  margin-right: 10px;
+  height: 50px;
+  width: auto;
 }
 
 .logo-text {
-  font-size: 20px;
-  font-weight: bold;
-  color: #4a6cf7;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--nk-blue);
 }
 
 .nav-links {
   display: flex;
+  gap: 32px;
   list-style: none;
 }
 
 .nav-link {
-  margin-left: 30px;
   text-decoration: none;
-  color: #333;
+  color: var(--nk-gray-dark);
+  font-size: 16px;
   font-weight: 500;
   position: relative;
-  transition: color 0.3s ease;
+  transition: var(--transition);
 }
 
 .nav-link:hover {
-  color: #4a6cf7;
+  color: var(--nk-blue);
 }
 
 .nav-link.active {
-  color: #4a6cf7;
+  color: var(--nk-blue);
 }
 
 .nav-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -6px;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: #4a6cf7;
+  height: 3px;
+  background-color: var(--nk-blue);
+  border-radius: 3px;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-  
-  .logo {
-    margin-bottom: 10px;
-  }
-  
-  .nav-links {
-    width: 100%;
-    justify-content: space-around;
-  }
-  
-  .nav-link {
-    margin: 0;
-  }
-}
 </style>
