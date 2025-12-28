@@ -1,0 +1,126 @@
+.weather-page {
+    background: linear-gradient(135deg, #782069 0%, #a54b91 100%); /* 南开紫渐变 */
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.weather-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wind-main-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.wind-icon {
+    font-size: 80px;
+    animation: wind-move 3s infinite ease-in-out;
+}
+
+@keyframes wind-move {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(15px); }
+}
+
+#wind-level {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.survival-guide {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.guide-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.guide-item {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid #782069;
+}
+
+.guide-item i {
+    font-size: 24px;
+    color: #782069;
+    margin-bottom: 10px;
+}
+/* 让背景动起来：模拟流动的云层 */
+.weather-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 200%; height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* 简单的雷达扫描动画 */
+.radar-container {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.radar-beam {
+  width: 50%; height: 2px;
+  background: white;
+  position: absolute; top: 50%; left: 50%;
+  transform-origin: left center;
+  animation: rotate 2s linear infinite;
+}
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.weather-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #782069 0%, #1a5397 100%);
+  min-height: 100vh;
+  color: white;
+}
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+}
+.wind-display { display: flex; justify-content: center; align-items: center; gap: 30px; margin: 20px 0; }
+.wind-main-num { font-size: 8rem; font-weight: 800; }
+.survival-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+.survival-item {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a5397;
+  padding: 20px;
+  border-radius: 12px;
+}
+.wind-icon-animate { font-size: 5rem; animation: float 3s infinite ease-in-out; }
+@keyframes float { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(20px); } }
