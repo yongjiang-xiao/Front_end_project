@@ -1,0 +1,246 @@
+/* 全局样式重置 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 南开大学品牌色 */
+--nk-blue: #1a5397;
+  --nk-blue-light: #3b82f6;
+  --nk-blue-dark: #0f3460;
+  --nk-gray: #f5f7fa;
+  --nk-gray-dark: #4b5563;
+  --nk-white: #ffffff;
+  --nk-accent: #ffc107;
+
+  /* 通用变量 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  background-color: var(--nk-gray);
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* 容器样式 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 板块通用样式 */
+.section {
+  display: none;
+  padding: 60px 0;
+  min-height: calc(100vh - 80px);
+}
+
+.section-title {
+  font-size: 36px;
+  color: var(--nk-blue-dark);
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--nk-accent);
+  border-radius: 2px;
+}
+
+.section.active {
+  display: block !important;
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: var(--nk-accent);
+  color: var(--nk-blue-dark);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  background-color: #e6a800;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--nk-white);
+  color: var(--nk-white);
+  margin-left: 20px;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 卡片样式 */
+.card {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* 表单样式 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--nk-blue);
+  box-shadow: 0 0 0 2px rgba(26, 83, 151, 0.2);
+}
+
+/* 通知样式 */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: white;
+  z-index: 1000;
+  max-width: 300px;
+  animation: slideIn 0.3s ease;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+.notification.warning {
+  background-color: #ff9800;
+}
+
+.notification.info {
+  background-color: #2196f3;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* 通用布局样式 */
+.layout {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 500px;
+}
+
+/* 页面样式 */
+.page {
+  max-width: 1200px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--nk-blue-dark);
+}
+
+.page-header p {
+  font-size: 16px;
+  color: var(--nk-gray-dark);
+}
+
+/* 模态框动画 */
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
