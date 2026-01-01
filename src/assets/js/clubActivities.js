@@ -1,0 +1,133 @@
+// 分类按钮
+export const CLUB_CATEGORIES = [
+  { key: "all", label: "全部社团" },
+  { key: "volunteer", label: "志愿服务" },
+  { key: "tech", label: "科技创新" },
+  { key: "theory", label: "理论学习" },
+  { key: "sports", label: "体育运动" },
+  { key: "art", label: "文化艺术" },
+  { key: "academic", label: "学术研究" },
+];
+
+// 社团数据（你把原 HTML 每个 .club-card 转成一条对象）
+export const CLUBS = [
+  // 志愿服务
+  { name: "爱心俱乐部", category: "volunteer", desc: "开展各类志愿服务活动，传递爱心与温暖", tags: ["志愿服务"] },
+  { name: "思源社", category: "volunteer", desc: "饮水思源，感恩回馈，开展公益服务活动", tags: ["志愿服务"] },
+  { name: "新长城自强社", category: "volunteer", desc: "培养学生自强不息精神，助力成长成才", tags: ["志愿服务"] },
+  { name: "学生红十字会", category: "volunteer", desc: "普及急救知识，开展人道主义服务活动", tags: ["志愿服务"] },
+  { name: "绿色行动小组", category: "volunteer", desc: "倡导环保理念，开展绿色环保实践活动", tags: ["志愿服务"] },
+  { name: "法律援助协会", category: "volunteer", desc: "提供法律咨询，普及法律知识，维护合法权益", tags: ["志愿服务"] },
+  { name: "平安南开行动小组", category: "volunteer", desc: "维护校园安全，开展安全教育活动", tags: ["志愿服务"] },
+
+  // 科技创新
+  { name: "全球治理与国际组织发展研究会", category: "tech", desc: "研究全球治理，培养国际视野和组织能力", tags: ["科技创新"] },
+  { name: "航空模型协会", category: "tech", desc: "设计制作航空模型，开展航空科技活动", tags: ["科技创新"] },
+  { name: "创新技术学生俱乐部", category: "tech", desc: "探索前沿技术，培养创新思维和实践能力", tags: ["科技创新"] },
+  { name: "3D打印协会", category: "tech", desc: "学习3D打印技术，实现创意设计与制作", tags: ["科技创新"] },
+  { name: "VR社", category: "tech", desc: "探索虚拟现实技术，开发VR应用体验", tags: ["科技创新"] },
+  { name: "多隆电子协会", category: "tech", desc: "学习电子技术，开展电子制作与创新活动", tags: ["科技创新"] },
+  { name: "机器人社", category: "tech", desc: "设计制作机器人，参加各类机器人竞赛", tags: ["科技创新"] },
+  { name: "OpenHarmony技术俱乐部", category: "tech", desc: "探索开源系统，开发鸿蒙应用生态", tags: ["科技创新"] },
+  { name: "南开大学AI创新俱乐部", category: "tech", desc: "探索人工智能技术，开展AI创新应用", tags: ["科技创新"] },
+  { name: "犀牛鸟高校创新俱乐部", category: "tech", desc: "产学研结合，培养创新实践能力", tags: ["科技创新"] },
+  { name: "AIGC社团", category: "tech", desc: "探索生成式AI技术，创作AI艺术作品", tags: ["科技创新"] },
+
+  // 理论学习
+  { name: "红色记忆宣讲团", category: "theory", desc: "传承红色基因，宣讲革命历史与精神", tags: ["理论学习"] },
+  { name: "学生模拟政协协会", category: "theory", desc: "模拟政协活动，了解政治协商制度", tags: ["理论学习"] },
+  { name: "新觉悟社", category: "theory", desc: "传承五四精神，开展理论学习与实践活动", tags: ["理论学习"] },
+  { name: "习近平新时代中国特色社会主义思想学生宣讲团", category: "theory", desc: "学习宣讲新思想，践行社会主义核心价值观", tags: ["理论学习"] },
+  { name: "南开大学国防军事协会", category: "theory", desc: "普及国防知识，开展军事训练与教育活动", tags: ["理论学习"] },
+  { name: "公能思辨社", category: "theory", desc: "培养思辨能力，开展辩论与讨论活动", tags: ["理论学习"] },
+  { name: "周恩来池田大作研究会", category: "theory", desc: "研究两位伟人思想，促进中日文化交流", tags: ["理论学习"] },
+  { name: "立公研究会", category: "theory", desc: "弘扬公能精神，培养公共服务意识", tags: ["理论学习"] },
+
+  // 体育运动
+  { name: "棋牌协会", category: "sports", desc: "开展棋牌活动，培养策略思维与竞技精神", tags: ["体育运动"] },
+  { name: "国标舞团", category: "sports", desc: "学习国标舞，参加舞蹈表演与比赛", tags: ["体育运动"] },
+  { name: "五虎火力篮球社", category: "sports", desc: "开展篮球活动，培养团队协作与竞技精神", tags: ["体育运动"] },
+  { name: "跑步协会", category: "sports", desc: "组织跑步活动，推广健康生活方式", tags: ["体育运动"] },
+  { name: "南开大学飞盘社", category: "sports", desc: "推广飞盘运动，开展飞盘训练与比赛", tags: ["体育运动"] },
+  { name: "跆拳道社", category: "sports", desc: "学习跆拳道，培养意志品质与身体素质", tags: ["体育运动"] },
+  { name: "龙舟协会", category: "sports", desc: "传承龙舟文化，开展龙舟训练与比赛", tags: ["体育运动"] },
+  { name: "乒乓球协会", category: "sports", desc: "开展乒乓球活动，提高球技与竞技水平", tags: ["体育运动"] },
+  { name: "激扬排球社", category: "sports", desc: "推广排球运动，开展排球训练与比赛", tags: ["体育运动"] },
+  { name: "网球协会", category: "sports", desc: "学习网球技术，开展网球训练与比赛", tags: ["体育运动"] },
+  { name: "羽毛球协会", category: "sports", desc: "开展羽毛球活动，提高球技与竞技水平", tags: ["体育运动"] },
+  { name: "i桌游协会", category: "sports", desc: "推广桌游文化，开展桌游活动与比赛", tags: ["体育运动"] },
+  { name: "足球协会", category: "sports", desc: "开展足球活动，培养团队协作与竞技精神", tags: ["体育运动"] },
+  { name: "武术协会", category: "sports", desc: "传承武术文化，学习武术技艺与精神", tags: ["体育运动"] },
+  { name: "射箭队", category: "sports", desc: "学习射箭技术，培养专注力与精准度", tags: ["体育运动"] },
+  { name: "飞扬无限轮滑社", category: "sports", desc: "推广轮滑运动，开展轮滑技巧训练", tags: ["体育运动"] },
+  { name: "海风游泳协会", category: "sports", desc: "开展游泳活动，提高游泳技能与健康水平", tags: ["体育运动"] },
+  { name: "健身协会", category: "sports", desc: "推广健身理念，开展健身训练与指导", tags: ["体育运动"] },
+  { name: "马拉松社", category: "sports", desc: "组织马拉松训练，参加马拉松赛事", tags: ["体育运动"] },
+  { name: "台球协会", category: "sports", desc: "学习台球技术，开展台球活动与比赛", tags: ["体育运动"] },
+
+  // 文化艺术
+  { name: "民乐团", category: "art", desc: "演奏民族音乐，传承中华优秀音乐文化", tags: ["文化艺术"] },
+  { name: "灵南科幻协会", category: "art", desc: "探索科幻世界，创作科幻作品与讨论", tags: ["文化艺术"] },
+  { name: "南开文学社", category: "art", desc: "开展文学创作与交流，培养文学素养", tags: ["文化艺术"] },
+  { name: "翔宇剧社", category: "art", desc: "开展戏剧表演，培养表演艺术与创作能力", tags: ["文化艺术"] },
+  { name: "南风动漫社", category: "art", desc: "推广动漫文化，开展动漫创作与交流活动", tags: ["文化艺术"] },
+  { name: "咖啡浪潮俱乐部", category: "art", desc: "品鉴咖啡文化，学习咖啡制作技艺", tags: ["文化艺术"] },
+  { name: "口琴协会", category: "art", desc: "学习口琴演奏，开展音乐交流活动", tags: ["文化艺术"] },
+  { name: "礼仪模特队", category: "art", desc: "培养礼仪素养，开展模特表演与培训", tags: ["文化艺术"] },
+  { name: "主持团", category: "art", desc: "培养主持能力，参与各类活动主持工作", tags: ["文化艺术"] },
+  { name: "国乐相声协会", category: "art", desc: "传承相声艺术，开展相声表演与创作", tags: ["文化艺术"] },
+  { name: "书画协会", category: "art", desc: "学习书法绘画，开展书画创作与交流", tags: ["文化艺术"] },
+  { name: "电影协会", category: "art", desc: "欣赏电影艺术，开展电影评论与创作", tags: ["文化艺术"] },
+  { name: "室内乐团", category: "art", desc: "演奏室内乐作品，开展音乐交流活动", tags: ["文化艺术"] },
+  { name: "笛箫协会", category: "art", desc: "学习笛箫演奏，传承民族器乐文化", tags: ["文化艺术"] },
+  { name: "外文剧社", category: "art", desc: "表演外文戏剧，促进跨文化交流与学习", tags: ["文化艺术"] },
+  { name: "织音吉他社", category: "art", desc: "学习吉他演奏，开展音乐创作与表演", tags: ["文化艺术"] },
+  { name: "钢琴社", category: "art", desc: "学习钢琴演奏，开展钢琴交流活动", tags: ["文化艺术"] },
+  { name: "侦探推理爱好者协会", category: "art", desc: "开展推理游戏，培养逻辑思维能力", tags: ["文化艺术"] },
+  { name: "南开大学MAC纸牌屋", category: "art", desc: "开展纸牌游戏，培养策略思维与娱乐休闲", tags: ["文化艺术"] },
+  { name: "Fashion街舞社", category: "art", desc: "学习街舞技巧，开展街舞表演与比赛", tags: ["文化艺术"] },
+  { name: "南开大学摄影与无人机协会", category: "art", desc: "学习摄影技巧，开展航拍与摄影创作", tags: ["文化艺术"] },
+  { name: "噜噜手作社", category: "art", desc: "开展手工创作，培养动手能力与创造力", tags: ["文化艺术"] },
+  { name: "爱乐音乐协会", category: "art", desc: "开展音乐活动，促进音乐交流与欣赏", tags: ["文化艺术"] },
+  { name: "冰火舞蹈团", category: "art", desc: "开展舞蹈表演，培养舞蹈艺术素养", tags: ["文化艺术"] },
+  { name: "昆山曲社", category: "art", desc: "传承昆曲艺术，开展曲艺表演与学习", tags: ["文化艺术"] },
+  { name: "瑚琏琴社", category: "art", desc: "学习古琴演奏，传承古琴文化艺术", tags: ["文化艺术"] },
+  { name: "京剧团", category: "art", desc: "传承京剧艺术，开展京剧表演与学习", tags: ["文化艺术"] },
+  { name: "洛神华汉服社", category: "art", desc: "推广汉服文化，开展汉服展示与交流活动", tags: ["文化艺术"] },
+
+  // 学术研究
+  { name: "哲学研习会", category: "academic", desc: "探讨哲学问题，培养哲学思维与素养", tags: ["学术研究"] },
+  { name: "数学建模协会", category: "academic", desc: "学习数学建模，参加数学建模竞赛", tags: ["学术研究"] },
+  { name: "海棠国际关系学会", category: "academic", desc: "研究国际关系，培养国际视野与分析能力", tags: ["学术研究"] },
+  { name: "量化投资研究会", category: "academic", desc: "学习量化投资，开展金融分析与研究", tags: ["学术研究"] },
+  { name: "演讲团", category: "academic", desc: "培养演讲能力，参加演讲比赛与活动", tags: ["学术研究"] },
+  { name: "湖湘文化研究会", category: "academic", desc: "研究湖湘文化，传承地方文化精髓", tags: ["学术研究"] },
+  { name: "经济学社", category: "academic", desc: "学习经济理论，分析经济现象与问题", tags: ["学术研究"] },
+  { name: "信息安全协会", category: "academic", desc: "学习信息安全技术，提高网络安全意识", tags: ["学术研究"] },
+  { name: "高阶科研训练社", category: "academic", desc: "开展科研训练，培养科研能力与素养", tags: ["学术研究"] },
+  { name: "物理思辨社", category: "academic", desc: "探讨物理问题，培养科学思维与研究能力", tags: ["学术研究"] },
+  { name: "ACM算法协会", category: "academic", desc: "学习算法设计，参加程序设计竞赛", tags: ["学术研究"] },
+  { name: "二十一世纪英文文学社", category: "academic", desc: "研究英文文学，提高英语文学素养", tags: ["学术研究"] },
+  { name: "丽泽读书协会", category: "academic", desc: "开展读书活动，分享阅读心得与体会", tags: ["学术研究"] },
+  { name: "文博考古爱好者协会", category: "academic", desc: "探索文博考古，了解历史文化遗产", tags: ["学术研究"] },
+  { name: "经管法研究会", category: "academic", desc: "研究经管法问题，培养跨学科思维能力", tags: ["学术研究"] },
+  { name: "心理协会", category: "academic", desc: "学习心理学知识，关注心理健康与发展", tags: ["学术研究"] },
+  { name: "自然博物社", category: "academic", desc: "探索自然科学，开展自然观察与研究", tags: ["学术研究"] },
+  { name: "APEX英文辩论学社", category: "academic", desc: "开展英文辩论，提高英语思辨与表达能力", tags: ["学术研究"] },
+  { name: "融通人才基地", category: "academic", desc: "培养综合能力，促进跨学科交流与发展", tags: ["学术研究"] },
+  { name: "环境科学协会", category: "academic", desc: "研究环境问题，开展环保科研与实践", tags: ["学术研究"] },
+  { name: "诗词楹联学会", category: "academic", desc: "创作诗词楹联，传承中华诗词文化", tags: ["学术研究"] },
+  { name: "三农学社", category: "academic", desc: "研究三农问题，开展农村调研与实践", tags: ["学术研究"] },
+  { name: "红学社", category: "academic", desc: "研究红楼梦，探讨古典文学魅力", tags: ["学术研究"] },
+  { name: "天文协会", category: "academic", desc: "观测天体现象，探索宇宙奥秘", tags: ["学术研究"] },
+  { name: "咨询协会", category: "academic", desc: "学习咨询技巧，开展咨询服务与培训", tags: ["学术研究"] },
+  { name: "学生职业发展协会", category: "academic", desc: "规划职业发展，开展就业指导与培训", tags: ["学术研究"] },
+  { name: "南开大学创新创业协会", category: "academic", desc: "培养创新精神，开展创业实践与交流", tags: ["学术研究"] },
+];
+
+
+// （可选）小工具：按分类过滤
+export function filterClubs(clubs, categoryKey) {
+  if (!categoryKey || categoryKey === "all") return clubs;
+  return clubs.filter((c) => c.category === categoryKey);
+}
