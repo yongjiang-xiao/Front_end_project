@@ -88,55 +88,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/南开大学logo.jpg" alt="南开大学Logo" class="footer-logo-img" />
-                    <p class="footer-slogan">允公允能，日新月异</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-link-group">
-                        <h4>快速链接</h4>
-                        <ul>
-                            <li><a href="index.html#home" data-section="home">首页</a></li>
-                            <li><a href="index.html#about" data-section="about">学校介绍</a></li>
-                            <li><a href="index.html#map" data-section="map">校园地图</a></li>
-                            <li><a href="#" data-section="life" id="lifeServiceLink3">生活服务</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-link-group">
-                        <h4>官方平台</h4>
-                        <ul>
-                            <li><a href="https://www.nankai.edu.cn" target="_blank">南开大学官网</a></li>
-                            <li><a href="https://jwc.nankai.edu.cn" target="_blank">教务处</a></li>
-                            <li><a href="https://graduate.nankai.edu.cn" target="_blank">研究生院</a></li>
-                            <li><a href="https://xsc.nankai.edu.cn" target="_blank">学生工作处</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-link-group">
-                        <h4>招生就业</h4>
-                        <ul>
-                            <li><a href="https://zsb.nankai.edu.cn" target="_blank">本科招生</a></li>
-                            <li><a href="https://graduate.nankai.edu.cn" target="_blank">研究生招生</a></li>
-                            <li><a href="https://job.nankai.edu.cn" target="_blank">就业指导中心</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-link-group">
-                        <h4>联系我们</h4>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> 天津市南开区卫津路94号</li>
-                            <li><i class="fas fa-phone"></i> 022-23508219</li>
-                            <li><i class="fas fa-envelope"></i> office@nankai.edu.cn</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 南开大学 版权所有 | 津ICP备12345678号</p>
-            </div>
-        </div>
-    </footer>
+    
     <div id="success-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
