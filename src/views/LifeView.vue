@@ -143,7 +143,8 @@
             <h3 class="category-title">文体生活</h3>
           </div>
           <div class="service-grid">
-           <router-link to="/stadium-booking" class="service-item-link">
+           <router-link to="/life/stadium-booking" class="service-item-link">
+
 
               <div class="service-item">
                 <div class="service-icon">
