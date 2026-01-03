@@ -212,25 +212,27 @@
 }
 
 /* 安全保障模态框样式 */
-.modal {
-
+.modal{
   position: fixed;
+  inset: 0;                 /* 等价于 top:0; right:0; bottom:0; left:0 */
   z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+
+  display: flex;            /* 用 flex 让内容居中 */
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;            /* 小屏留边 */
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modal-content{
   background-color: var(--nk-white);
-  margin: 10% auto;
+  width: min(500px, 92vw);  /*控制小页面宽度 */
+  max-height: 80vh;         /*不要超出屏幕 */
+  overflow: auto;           /* 内容多就滚动 */
+
   padding: 0;
   border-radius: var(--radius-md);
-  width: 90%;
-  max-width: 500px;
   box-shadow: var(--shadow-lg);
   animation: modalopen 0.4s;
 }
