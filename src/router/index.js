@@ -25,19 +25,19 @@ const routes = [
     component: () => import('../views/LifeView.vue')
   },
 
-  // ✅ 校车（如果你希望它也是独立页面，可以像这样单独放出来）
+
   {
     path: '/life/shuttle-bus',
     name: 'shuttle-bus',
     component: () => import('../views/life/ShuttleBus.vue')
   },
 
-  // ✅ 体育馆预约：真正独立的新页面
   {
-    path: '/stadium-booking',
-    name: 'stadium-booking',
-    component: () => import('../views/life/StadiumBooking.vue')
-  },
+  path: '/life/stadium-booking',
+  name: 'stadium-booking',
+  component: () => import('../views/life/StadiumBooking.vue')
+},
+
 
   {
     path: '/life/club-activities',
