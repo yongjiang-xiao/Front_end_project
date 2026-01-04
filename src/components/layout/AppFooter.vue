@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>南开大学服务网</h3>
+          <h3>南开大学一站式学生服务平台</h3>
           <p>为南开学子提供便捷的校园服务</p>
           <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {{ currentYear }} 南开大学服务网. All rights reserved.</p>
+        <p>&copy; {{ currentYear }} 南开大学一站式学生服务平台. All rights reserved.</p>
       </div>
     </div>
   </footer>

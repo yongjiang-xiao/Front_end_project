@@ -4,7 +4,7 @@
       <nav class="navbar">
         <router-link to="/" class="logo">
           <img src="@/assets/images/南开大学logo.jpg" alt="南开大学Logo" class="logo-img" />
-          <span class="logo-text">南开大学服务网</span>
+          <span class="logo-text">南开大学一站式学生服务平台</span>
         </router-link>
         <ul class="nav-links">
           <li>

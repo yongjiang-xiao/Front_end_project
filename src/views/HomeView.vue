@@ -134,11 +134,14 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(26, 83, 151, 0.1), rgba(120, 32, 105, 0.1));
+  background: linear-gradient(135deg, rgba(26, 83, 151, 0.7), rgba(120, 32, 105, 0.7)), url('@/assets/images/八里台校区.webp');
   background-size: cover;
   background-position: center;
-  opacity: 1;
+  background-repeat: no-repeat;
+  opacity: 0.8;
   z-index: 0;
+  filter: brightness(0.8) contrast(1.1);
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .hero-content {

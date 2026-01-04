@@ -87,18 +87,9 @@
                   <i class="fas fa-shuttle-van"></i>
                 </div>
                 <h4 class="service-name">校车查询</h4>
-                <p class="service-desc">八里台-津南校区班车时刻表、节假日调整、实时位置查询</p>
+                <p class="service-desc">班车时刻表、节假日调整、实时位置查询，覆盖所有校区路线</p>
               </div>
             </router-link>
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fas fa-bicycle"></i>
-              </div>
-              <h4 class="service-name">共享单车</h4>
-              <p class="service-desc">校园内共享单车停放区域规划、使用优惠、违规停放处理办法</p>
-            </div>
-            <div>
-            </div>
           </div>
         </div>
 
