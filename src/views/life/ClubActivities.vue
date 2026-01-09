@@ -40,9 +40,14 @@
       </div>
     </div>
 
-    <!-- clubs-grid：保持 club-card / club-name / club-desc / club-tags / tag 这些 class，不改 CSS 选择器 -->
+    <!-- clubs-grid：使用 TransitionGroup 添加切换动画 -->
     <div class="clubs-container">
-      <div class="clubs-grid" id="clubsGrid">
+      <TransitionGroup
+        name="club-fade"
+        tag="div"
+        class="clubs-grid"
+        id="clubsGrid"
+      >
         <div
           v-for="club in filteredClubs"
           :key="club.name"
@@ -56,7 +61,7 @@
             <span class="tag" v-for="t in club.tags" :key="t">{{ t }}</span>
           </div>
         </div>
-      </div>
+      </TransitionGroup>
     </div>
 
     <!-- modal：结构照原 HTML（id 也保留） -->
@@ -96,6 +101,7 @@ export default {
   data() {
     return {
       clubs: CLUBS,
+      categories: CLUB_CATEGORIES,
       currentCategory: "all",
       showModal: false,
       selectedClub: null,
@@ -159,4 +165,28 @@ deactivated() {
 </script>
 
 <style scoped src="@/assets/css/club-activities.css"></style>
+
+<style scoped>
+/* 社团列表切换动画 */
+.club-fade-enter-active,
+.club-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.club-fade-enter-from,
+.club-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* 分类按钮切换动画 */
+.filter-btn {
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+</style>
 
