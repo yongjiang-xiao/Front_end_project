@@ -12,7 +12,7 @@
 2.首次运行前，在文件夹打开终端，运行 npm install，接着运行 npm run serve<br>
 3.以后使用只需运行 npm run serve<br>
 <br>
-#项目结构
+#项目结构<br>
 project/<br>
 |---public/<br>
 &nbsp;&nbsp;&nbsp;|---images/ # 图片<br>
