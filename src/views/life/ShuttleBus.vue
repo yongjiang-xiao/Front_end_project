@@ -191,11 +191,8 @@
                 </div>
                 <div class="time-table">
                   <div class="table-header">
-                    <div v-if="currentScheduleData.times && Array.isArray(currentScheduleData.times) && currentScheduleData.times.length > 0 && needLocationColumn">
-                      <div class="header-cell">发车时间</div>
-                      <div class="header-cell">上车地点</div>
-                    </div>
-                    <div v-else class="header-cell">发车时间</div>
+                    <div class="header-cell">发车时间</div>
+                    <div v-if="currentScheduleData.times && Array.isArray(currentScheduleData.times) && currentScheduleData.times.length > 0 && needLocationColumn" class="header-cell">上车地点</div>
                     <div class="header-cell">备注</div>
                   </div>
                   <div class="table-body">

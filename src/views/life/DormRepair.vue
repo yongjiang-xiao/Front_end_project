@@ -13,15 +13,15 @@
             </div>
 
             <div class="repair-form-container">
-                <form id="repair-form" class="repair-form">
+                <form id="repair-form" class="repair-form" @submit.prevent="submitForm">
                     <div class="form-group">
                         <label for="student-id">学号 <span class="required">*</span></label>
-                        <input type="text" id="student-id" name="student-id" placeholder="请输入您的学号" required>
+                        <input type="text" id="student-id" v-model="form.studentId" placeholder="请输入您的学号" required>
                     </div>
 
                     <div class="form-group">
                         <label for="dorm-building">宿舍楼 <span class="required">*</span></label>
-                        <select id="dorm-building" name="dorm-building" required>
+                        <select id="dorm-building" v-model="form.dormBuilding" required>
                             <option value="">请选择宿舍楼</option>
                             <option value="1">1号楼</option>
                             <option value="2">2号楼</option>
@@ -38,12 +38,12 @@
 
                     <div class="form-group">
                         <label for="dorm-room">宿舍号 <span class="required">*</span></label>
-                        <input type="text" id="dorm-room" name="dorm-room" placeholder="请输入宿舍号，如：301" required>
+                        <input type="text" id="dorm-room" v-model="form.dormRoom" placeholder="请输入宿舍号，如：301" required>
                     </div>
 
                     <div class="form-group">
                         <label for="problem-type">问题类型 <span class="required">*</span></label>
-                        <select id="problem-type" name="problem-type" required>
+                        <select id="problem-type" v-model="form.problemType" required>
                             <option value="">请选择问题类型</option>
                             <option value="water">水管问题</option>
                             <option value="electric">电路问题</option>
@@ -57,22 +57,22 @@
 
                     <div class="form-group">
                         <label for="problem-desc">问题描述 <span class="required">*</span></label>
-                        <textarea id="problem-desc" name="problem-desc" rows="5" placeholder="请详细描述您遇到的问题" required></textarea>
+                        <textarea id="problem-desc" v-model="form.problemDesc" rows="5" placeholder="请详细描述您遇到的问题" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="contact-phone">联系电话 <span class="required">*</span></label>
-                        <input type="tel" id="contact-phone" name="contact-phone" placeholder="请输入您的联系电话" required>
+                        <input type="tel" id="contact-phone" v-model="form.contactPhone" placeholder="请输入您的联系电话" required>
                     </div>
 
                     <div class="form-group">
                         <label for="available-time">方便维修时间</label>
-                        <input type="text" id="available-time" name="available-time" placeholder="例如：工作日下午、周末全天">
+                        <input type="text" id="available-time" v-model="form.availableTime" placeholder="例如：工作日下午、周末全天">
                     </div>
 
                     <div class="form-actions">
                         <button type="submit" class="submit-btn">提交报修</button>
-                        <button type="reset" class="reset-btn">重置表单</button>
+                        <button type="button" class="reset-btn" @click="resetForm">重置表单</button>
                     </div>
                 </form>
             </div>
@@ -89,19 +89,27 @@
         </section>
     </main>
     
-    <div id="success-modal" class="modal">
+    <div id="success-modal" class="modal" v-if="showModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>报修提交成功</h3>
-                <span class="close">&times;</span>
+                <span class="close" @click="closeModal">&times;</span>
             </div>
             <div class="modal-body">
                 <p>您的报修申请已成功提交，工作人员将在24小时内与您联系。</p>
-                <p>报修编号：<span id="repair-id"></span></p>
+                <p>报修编号：<span id="repair-id">{{ repairId }}</span></p>
             </div>
             <div class="modal-footer">
-                <button class="modal-btn">确定</button>
+                <button class="modal-btn" @click="closeModal">确定</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Toast 提示 -->
+    <div class="toast" v-if="toast.show">
+        <div class="toast-content">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>{{ toast.message }}</span>
         </div>
     </div>
   </div>
@@ -261,7 +269,6 @@
 
 /* 模态框样式 */
 .modal {
-  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -363,6 +370,42 @@
   background-color: #a00000;
 }
 
+/* Toast 样式 */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: toast-fade 0.3s ease;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast-content i {
+  color: #ffc107;
+}
+
+@keyframes toast-fade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .dorm-repair-section {
@@ -432,14 +475,10 @@ export default {
       const f = this.form
 
       if (!f.studentId) return this.showMessage('请输入学号')
-      if (!/^\d{8,12}$/.test(f.studentId))
-        return this.showMessage('学号格式应为8-12位数字')
-
       if (!f.dormBuilding) return this.showMessage('请选择宿舍楼')
       if (!f.dormRoom) return this.showMessage('请输入宿舍号')
       if (!f.problemType) return this.showMessage('请选择问题类型')
-      if (!f.problemDesc || f.problemDesc.length < 10)
-        return this.showMessage('问题描述至少10个字符')
+      if (!f.problemDesc) return this.showMessage('请输入问题描述')
 
       if (!f.contactPhone) return this.showMessage('请输入联系电话')
       if (!/^1[3-9]\d{9}$/.test(f.contactPhone))
