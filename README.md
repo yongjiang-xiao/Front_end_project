@@ -1,43 +1,152 @@
-#项目名称<br>
-南开大学一站式学生服务平台<br>
-通过Vue 实现南开大学一站式学生服务平台的运行，适用于学生服务。<br>
-<br>
-#功能特点<br>
-模块化：使用Vue组件，模块化开发<br>
-易用：容易使用<br>
-功能丰富:有丰富的功能<br>
-<br>
-#安装步骤<br>
-1.下载安装包到本地并解压<br>
-2.首次运行前，在文件夹打开终端，运行 npm install，接着运行 npm run serve<br>
-3.以后使用只需运行 npm run serve<br>
-<br>
-#项目结构<br>
-project/<br>
-|---public/<br>
-&nbsp;&nbsp;&nbsp;|---images/ # 图片<br>
-&nbsp;&nbsp;&nbsp;|---index/<br>
-|---src/<br>
-&nbsp;&nbsp;&nbsp;|---assets/ # 图片<br>
-&nbsp;&nbsp;&nbsp;|---components/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---common/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---Notification/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---layout/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---AppFooter/ # 页脚<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---AppHeader/ # 页头<br>
-&nbsp;&nbsp;&nbsp;|---router/ # 路由<br>
-&nbsp;&nbsp;&nbsp;|---store/<br>
-&nbsp;&nbsp;&nbsp;|---views/<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---life/ # 生活服务板块<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---CardLoss/ # 校园卡补办<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---CardRecharge/ # 校园卡充值<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---ClubActivities/ # 社团活动<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---DormRepair/ # 宿舍报修<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---PsychologicalCounseling/ # 心理咨询<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---ShuttleBue/ # 班车<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---StadiumBooking/ # 体育馆预定<br>
-&nbsp;&nbsp;&nbsp;|---AboutView/ # 介绍页<br>
-&nbsp;&nbsp;&nbsp;|---HomeView/ # 主页<br>
-&nbsp;&nbsp;&nbsp;|---LifeView/ # 生活服务页<br>
-&nbsp;&nbsp;&nbsp;|---MapView/ # 地图页<br>
-&nbsp;&nbsp;&nbsp;|---WeatherView/ # 天气预报页<br>
+# 开云通——南开大学一站式服务平台
+
+> 前端开发课程实践作品：将学校信息展示 + 校园地图导览 + 生活服务入口 + 天气查询等高频功能整合为统一入口，减少多平台跳转与信息分散，提供更清晰的一站式访问体验。
+
+- **仓库地址**：https://github.com/yongjiang-xiao/Front_end_project.git  
+- **项目类型**：前端课程项目
+
+---
+
+## ✨ Features 功能亮点
+
+- **统一入口**：主页聚合导航入口，快速到达学校介绍 / 校园地图 / 生活服务 / 天气系统  
+- **校园地图导览**：基于底图 + 热点交互（hover 高亮、click 详情）  
+- **生活服务聚合**：常用服务分类整合，网格卡片入口，路径更短  
+- **天气系统**：支持天气信息的接口请求与展示（包含加载/空/错状态提示）  
+- **统一视觉风格**：主题色、字体、间距、圆角、阴影、动效等全局规范  
+
+---
+
+## 📚 Table of Contents 目录
+
+- [✨ Features 功能亮点](#-features-功能亮点)
+- [🧩 Modules 页面模块](#-modules-页面模块)
+- [🛠 Tech Stack 技术栈](#-tech-stack-技术栈)
+- [🚀 Getting Started 快速开始](#-getting-started-快速开始)
+- [📁 Project Structure 目录结构](#-project-structure-目录结构)
+- [📝 Key Implementation 关键实现说明](#-key-implementation-关键实现说明)
+- [👤 Author 作者信息](#-author-作者信息)
+
+---
+
+## 🧩 Modules 页面模块
+
+### Home 主页
+- 全站入口，聚合核心功能模块导航（学校介绍 / 校园地图 / 生活服务 / 天气系统等）
+- 卡片/按钮式入口快速跳转，降低查找成本
+- 统一交互反馈（hover、点击、过渡效果等）
+
+### About 学校介绍
+- 展示学校概况、历史文化与校园特色等信息
+- 分区布局（标题/段落/图片），提升阅读层次
+- 与全局样式保持一致（字体、间距、卡片阴影、主题色等）
+
+### Map 校园地图
+- 基于校园底图实现可视化导览，通过热点区域标注校内关键地点
+- 支持悬停高亮、点击查看详情等交互，便于定位与了解地点信息
+- 热点数据可配置化管理，便于扩展与维护
+
+### Life 生活服务
+- 将常用服务入口分类整合（心理咨询、校车查询、体育馆预约等）
+- 网格卡片布局，入口清晰、操作路径短
+- 支持子页面/子模块扩展，便于继续接入更多服务能力
+
+### Weather 津南风语者天气系统
+- 提供天气信息查询与展示（如当前天气、温度、湿度、风力等）
+- 通过网络请求从天气接口获取数据，并将数据渲染到页面
+- 支持加载状态、空状态与错误提示，避免信息缺失导致的体验断裂
+- 将展示结构与数据处理逻辑分离，便于后续扩展更多天气指标或城市切换能力
+
+---
+
+## 🛠 Tech Stack 技术栈
+
+- **核心框架**：Vue 3（组件化开发）
+- **路由**：Vue Router 4（按路由组织模块，支持导航与视图切换）
+- **状态管理**：Vuex 4（公共状态/配置集中管理）
+- **网络请求**：fetch / Axios（用于天气接口请求与数据交互）
+- **构建工具**：Vue CLI（`vue-cli-service serve`）
+- **包管理**：npm（存在 `package-lock.json`）
+
+---
+
+## 🚀 Getting Started 快速开始
+
+### 1) 环境要求
+- Node.js：建议 **16+ 或 18+**
+- npm：随 Node.js 自带
+
+### 2) 安装依赖
+```bash
+npm install
+````
+
+### 3) 启动开发环境
+
+```bash
+npm run serve
+```
+
+启动后根据控制台提示访问（通常为）：
+
+* `http://localhost:8080/`
+
+---
+
+## 📁 Project Structure 目录结构
+
+```text
+Front_end_project/
+├─ public/                     # 静态资源与 index.html
+├─ src/
+│  ├─ assets/                  # 图片/图标等资源
+│  ├─ views/                   # 页面级组件：Home / About / Map / Life / Weather ...
+│  ├─ components/              # 可复用组件（导航栏、卡片、弹窗等）
+│  ├─ router/                  # 路由配置（Vue Router）
+│  ├─ store/                   # Vuex 状态管理（如有）
+│  ├─ styles/                  # 样式文件：global.css + 各模块 css
+│  ├─ utils/                   # 工具函数（可选）
+│  ├─ App.vue                  # 根组件
+│  └─ main.js                  # 入口文件
+├─ package.json
+└─ package-lock.json
+```
+
+---
+
+## 📝 Key Implementation 关键实现说明
+
+### 1) 路由与模块拆分
+
+* 使用 Vue Router 将项目划分为多个独立页面模块（Home / About / Map / Life / Weather）
+* 主页作为统一入口，其余模块作为功能页，降低耦合，便于迭代维护
+* 支持扩展：新增页面只需增加 View 并补充路由配置即可
+
+### 2) 样式体系与统一规范
+
+* 通过 `global.css` 统一定义主题色、字体、间距、圆角、阴影等基础规范
+* 各模块使用独立样式补充布局与细节，实现“全局统一 + 局部定制”
+* 结合 Flex/Grid 布局实现响应式适配，保证不同屏幕显示效果
+
+### 3) 校园地图热点交互
+
+* 地图底图作为容器，热点区域按配置生成（位置/尺寸/编号/描述等）
+* 通过 hover/click 事件实现高亮与信息展示，增强可探索性
+* 热点配置化管理，便于增加点位或调整定位参数
+
+### 4) 天气系统稳定性设计
+
+* 通过网络请求获取天气数据，并对返回结果进行解析与展示
+* 接口失败时给出错误提示，并提供兜底展示，避免页面空白
+* 加入加载状态、空状态与异常提示，提升不同网络环境下的体验一致性
+* 将展示结构与数据处理逻辑分离，便于扩展更多天气指标或城市切换能力
+
+---
+
+## 👤 Author 作者信息
+
+* 肖泳江
+* 刘新康
+* 许宁远
+* 曹鹏杰
+* 李宇阳
